@@ -7,11 +7,14 @@ public class Users extends Human{
 	private int number;
 	public List<String> userList = new ArrayList();
 
+	public Users() {
 
+	}
 	public Users(String name) {
 		super(name);
 
 	}
+
 
 
 	public void bookRental() {

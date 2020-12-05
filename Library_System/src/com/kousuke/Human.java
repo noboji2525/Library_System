@@ -2,7 +2,9 @@ package com.kousuke;
 
 public class Human {
 	private String name;
+	public Human() {
 
+	}
 	public Human(String name) {
 		name = this.name;
 
