@@ -1,5 +1,6 @@
 # Library_System
 以下の問題を再現
+JavaSE11にて作成
 
 
 ■問題
