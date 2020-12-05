@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserList {
-	Users users = new Users();
+	User user = new User();
 	public List<String> userList = new ArrayList<String>();
 	public UserList() {
 
 	}
 	//利用者登録
 	public void userRegistration(String name) {
-		users.setName(name);
-		userList.add(users.getName());
+		user.setName(name);
+		userList.add(user.getName());
 	}
 	//利用者削除
 	public void userDelet(int listNumber) {

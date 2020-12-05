@@ -9,7 +9,7 @@ public class Mainmenu {
 		Scanner sc = new Scanner(System.in);
 		final String LINE_SPACE = System.getProperty("line.separator");
 		UserList userList = new UserList();
-		Users users = new Users();
+		User user = new User();
 
 		System.out.println("図書館へようこそ！");
 		while(flag_main) {
