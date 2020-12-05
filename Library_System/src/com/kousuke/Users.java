@@ -16,11 +16,11 @@ public class Users extends Human{
 	}
 
 
-
+	//本を借りる
 	public void bookRental() {
 
 	}
-
+	//本を返却
 	public void returnBook() {
 
 	}
