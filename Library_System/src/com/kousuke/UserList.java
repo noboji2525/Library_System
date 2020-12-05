@@ -25,7 +25,10 @@ public class UserList {
 	//利用者一覧表示
 	public void checkUserList() {
 		System.out.println("利用者の一覧を表示します");
-		System.out.println(users.userList);
+		int size = users.userList.size();//userListの配列の長さ
+		for(int i=0; i < size; i++) {
+			System.out.println(i+1 + ". " + users.userList.get(i));
+		}
 		System.out.println("---");
 
 	}

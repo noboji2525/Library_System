@@ -32,7 +32,7 @@ public class Mainmenu {
 						System.out.println("利用者名簿メニュー" + LINE_SPACE);
 						System.out.println(
 								"1. 利用者登録" + LINE_SPACE
-								+ "2.利用者削除" + LINE_SPACE
+								+ "2. 利用者削除" + LINE_SPACE
 								+ "3. 利用者一覧" + LINE_SPACE
 								+ "4. 戻る" + LINE_SPACE + LINE_SPACE
 								);
