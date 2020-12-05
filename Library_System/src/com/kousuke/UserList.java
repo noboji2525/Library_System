@@ -13,7 +13,7 @@ public class UserList {
 
 	//利用者登録
 	public void userRegistration() {
-		System.out.println("利用者の登録を致します");
+//		System.out.println("利用者の登録を致します");
 		System.out.print("名前を入力してください：");
 		String name = sc.next();
 //		Users users = new Users(name);
@@ -24,13 +24,23 @@ public class UserList {
 	}
 	//利用者一覧表示
 	public void checkUserList() {
-		System.out.println("利用者の一覧を表示します");
+//		System.out.println("利用者の一覧を表示します");
 		int size = users.userList.size();//userListの配列の長さ
 		for(int i=0; i < size; i++) {
 			System.out.println(i+1 + ". " + users.userList.get(i));
 		}
 		System.out.println("---");
-
+	}
+	//利用者削除
+	public void userDelet() {
+//		System.out.println("登録済みの利用者を削除します");
+		checkUserList();
+		System.out.println("削除したい利用者の番号を入力してください");
+		int number = sc.nextInt();
+		int listNumber = number -1;
+		System.out.println(users.userList.get(listNumber) + "を削除しました");
+		users.userList.remove(listNumber);
+		System.out.println("---");
 	}
 
 }

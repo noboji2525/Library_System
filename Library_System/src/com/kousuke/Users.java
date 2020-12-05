@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Users extends Human{
 	private int number;
-	public List<String> userList = new ArrayList();
+	public List<String> userList = new ArrayList<String>();
 
 	public Users() {
 

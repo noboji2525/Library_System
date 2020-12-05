@@ -3,10 +3,10 @@ package com.kousuke;
 import java.util.Scanner;
 
 public class Mainmenu {
+	static boolean flag_main = true;//メインメニューのフラグ
+	static boolean flag_userList = true;//利用者名簿のフラグ
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		boolean flag_main = true;//メインメニューのフラグ
-		boolean flag_userList = true;//利用者名簿のフラグ
 		final String LINE_SPACE = System.getProperty("line.separator");
 		UserList userList = new UserList();
 
@@ -24,11 +24,11 @@ public class Mainmenu {
 			System.out.print("操作を選んでください [1,2,3,4] > ");
 			int select = sc.nextInt();
 			System.out.println("---");
+			clearFlag();
 			switch(select) {
 				case 1://利用者名簿メニュー
 					while(flag_userList) {
-						flag_userList = true;
-						System.out.println("---");
+//						System.out.println("---");
 						System.out.println("利用者名簿メニュー" + LINE_SPACE);
 						System.out.println(
 								"1. 利用者登録" + LINE_SPACE
@@ -40,26 +40,24 @@ public class Mainmenu {
 						select = sc.nextInt();
 							switch(select) {
 							case 1://利用者登録
+								System.out.println("利用者の登録をします");
 								userList.userRegistration();
 								break;
 							case 2://利用者削除
+								System.out.println("登録済みの利用者を削除します");
+								userList.userDelet();
 								break;
 							case 3://利用者一覧
 								System.out.println("利用者一覧を開きます");
 								userList.checkUserList();
 								break;
-							case 4://戻る
+							case 4://戻る(メインメニュー)
 								flag_userList = false;
 								break;
 							default:
 								break;
 							}
-
 					}
-
-
-
-
 					break;
 				case 2://本棚
 					System.out.println("未実装");
@@ -80,5 +78,10 @@ public class Mainmenu {
 		sc.close();
 
 	}
+	public static void clearFlag() {
+		flag_main = true;
+		flag_userList = true;
+	}
+
 
 }
