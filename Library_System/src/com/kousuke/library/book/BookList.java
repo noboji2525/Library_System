@@ -41,6 +41,11 @@ public class BookList {
 //		System.out.println(bookList_all);//デバッグ
 	}
 
+	//本の一覧確認
+	public void checkBookList() {
+
+	}
+
 
 	}
 
