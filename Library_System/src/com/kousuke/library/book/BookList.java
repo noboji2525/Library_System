@@ -43,7 +43,9 @@ public class BookList {
 
 	//本の一覧確認
 	public void checkBookList() {
-
+		for(int i=0; i < bookList_name.size(); i++) {
+			System.out.println(i+1 + ". " + bookList_name.get(i));
+		}
 	}
 
 
