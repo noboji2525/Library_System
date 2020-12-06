@@ -1,25 +1,33 @@
 package com.kousuke.library.ui;
 
+public class CUIBookList {
 
-public class CUIUserList {
+	public static void selectBookList(boolean flag_bookList) {
 
-	public static void selectUserList(boolean flag_userList) {
-
-		while(flag_userList) {
-			System.out.println("利用者名簿メニュー" + CUIMainMenu.LINE_SPACE);
+		while(flag_bookList) {
+			System.out.println("本棚メニュー" + CUIMainMenu.LINE_SPACE);
 			System.out.println(
-					"1. 利用者登録" + CUIMainMenu.LINE_SPACE
-					+ "2. 利用者削除" + CUIMainMenu.LINE_SPACE
+					"1. 本の登録" + CUIMainMenu.LINE_SPACE
+					+ "2. 本の削除" + CUIMainMenu.LINE_SPACE
 					+ "3. 戻る" + CUIMainMenu.LINE_SPACE
 					);
-			System.out.print("操作を選んでください [1,2,3,4] > ");
+			System.out.print("操作を選んでください [1,2,3] > ");
 			CUIMainMenu.select = CUIMainMenu.sc.nextInt();
 				switch(CUIMainMenu.select) {
-				case 1://利用者登録
-					System.out.println("利用者の登録をします");
+				case 1://本の登録
+					System.out.println("本の登録をします");
 					System.out.print("名前を入力してください：");
 					String name = CUIMainMenu.sc.next();
-					CUIMainMenu.userList.userRegistration(name);
+					System.out.print("著者を入力してください");
+					String author = CUIMainMenu.sc.next();
+					System.out.println(
+							"1. 雑誌" + CUIMainMenu.LINE_SPACE
+							+ "2. 文庫本" + CUIMainMenu.LINE_SPACE
+							+ "3. 単行本" + CUIMainMenu.LINE_SPACE
+							);
+					System.out.print("ジャンルを選んでください [1,2,3] >");
+					String genre = CUIMainMenu.sc.next();
+					CUIMainMenu.bookList.bookRegistration(name,author,genre);
 					System.out.println(String.format("『%s』の登録を致しました",name));
 					System.out.println("---");
 					break;
@@ -37,14 +45,12 @@ public class CUIUserList {
 					System.out.println("---");
 					break;
 				case 3://戻る(メインメニューに遷移)
-					flag_userList = false;
+					flag_bookList = false;
 					break;
 				default:
 					break;
 				}
 		}
 
-
 	}
-
 }
