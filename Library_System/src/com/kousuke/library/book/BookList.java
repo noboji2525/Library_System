@@ -20,25 +20,27 @@ public class BookList {
 
 	//本の登録
 	public void bookRegistration(String name, String author, String genre) {
-			bookList_name.add(name);
-			bookList_author.add(author);
-			switch(genre) {
-				case("1")://雑誌
-					bookList_genre.add(magazine.getGenre());
-					break;
-				case("2")://文庫本
-					bookList_genre.add(paperback.getGenre());
-					break;
-				case("3")://単行本
-					bookList_genre.add(specialBook.getGenre());
-					break;
-			}
+		bookList_name.add(name);
+		bookList_author.add(author);
+		bookList_genre.add(genre);
+		bookList_allUpdate();
+	}
+	//本の削除
+	public void bookDelet(int number) {
+		bookList_name.remove(number);
+		bookList_author.remove(number);
+		bookList_genre.remove(number);
+		bookList_allUpdate();
+	}
+	//多次元リスト更新
+	public void bookList_allUpdate() {
+		bookList_all.clear();
+		bookList_all.add(bookList_name);
+		bookList_all.add(bookList_author);
+		bookList_all.add(bookList_genre);
+//		System.out.println(bookList_all);//デバッグ
+	}
 
-			bookList_all.add(bookList_name);
-			bookList_all.add(bookList_author);
-			bookList_all.add(bookList_genre);
-			System.out.println(bookList_all);//デバッグ
-		}
 
 	}
 
