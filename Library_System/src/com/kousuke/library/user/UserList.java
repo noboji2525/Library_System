@@ -1,4 +1,4 @@
-package com.kousuke;
+package com.kousuke.library.user;
 
 import java.util.ArrayList;
 import java.util.List;

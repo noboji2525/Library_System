@@ -1,4 +1,4 @@
-package com.kousuke;
+package com.kousuke.library.user;
 
 public class User extends Human{
 	private int number;

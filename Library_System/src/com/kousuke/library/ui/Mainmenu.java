@@ -1,6 +1,9 @@
-package com.kousuke;
+package com.kousuke.library.ui;
 
 import java.util.Scanner;
+
+import com.kousuke.library.user.User;
+import com.kousuke.library.user.UserList;
 
 public class Mainmenu {
 	static boolean flag_main = true;//メインメニューのフラグ

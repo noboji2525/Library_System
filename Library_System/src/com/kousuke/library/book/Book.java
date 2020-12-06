@@ -1,4 +1,4 @@
-package com.kousuke;
+package com.kousuke.library.book;
 
 public class Book {
 	private String name;
