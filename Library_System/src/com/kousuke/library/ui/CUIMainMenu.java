@@ -3,7 +3,6 @@ package com.kousuke.library.ui;
 import java.util.Scanner;
 
 import com.kousuke.library.book.BookList;
-import com.kousuke.library.user.User;
 import com.kousuke.library.user.UserList;
 
 public class CUIMainMenu {
@@ -14,7 +13,7 @@ public class CUIMainMenu {
 	static Scanner sc = new Scanner(System.in);
 	static UserList userList = new UserList();
 	static BookList bookList = new BookList();
-	static User user = new User();
+//	static User user = new User();
 	static int select;
 	public static void main(String[] args) {
 
