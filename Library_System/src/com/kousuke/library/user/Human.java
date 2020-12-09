@@ -1,21 +1,10 @@
 package com.kousuke.library.user;
 
-public class Human {
-	private String name;
-	public Human() {
+public interface Human {
+	void bookRental();
+	void returnBook();
 
-	}
-	public Human(String name) {
-		name = this.name;
 
-	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 }
