@@ -9,7 +9,8 @@ public class CUIBookList {
 			System.out.println(
 					"1. 本の登録" + CUIMainMenu.LINE_SPACE
 					+ "2. 本の削除" + CUIMainMenu.LINE_SPACE
-					+ "3. 戻る" + CUIMainMenu.LINE_SPACE
+					+ "3. 本の確認" + CUIMainMenu.LINE_SPACE
+					+ "4. 戻る" + CUIMainMenu.LINE_SPACE
 					);
 			System.out.print("操作を選んでください [1,2,3] > ");
 			CUIMainMenu.select = CUIMainMenu.sc.nextInt();
@@ -55,7 +56,11 @@ public class CUIBookList {
 					CUIMainMenu.bookList.bookDelet(listNumber);
 					System.out.println("---");
 					break;
-				case 3://戻る(メインメニューに遷移)
+				case 3://本の確認
+					System.out.println("登録済みの本を表示します")
+					;
+					break;
+				case 4://戻る(メインメニューに遷移)
 					flag_bookList = false;
 					break;
 				default:
