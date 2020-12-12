@@ -1,5 +1,11 @@
 package com.kousuke.library.ui;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 import com.kousuke.library.book.BookList;
@@ -11,12 +17,21 @@ public class CUIMainMenu {
 	static boolean flag_bookList = true;//本棚のフラグ
 	static final String LINE_SPACE = System.getProperty("line.separator");
 	static Scanner sc = new Scanner(System.in);
-	static UserList userList = new UserList();
+	public static UserList userList = new UserList();
 	static BookList bookList = new BookList();
 //	static User user = new User();
 	static int select;
-	public static void main(String[] args) {
-
+	static File file = new File("./userList.dat");
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+//		oos.writeObject(userList);
+//		oos.flush();
+		//oos.close();
+		if(file.exists()) {
+			FileInputStream fis = new FileInputStream("./userList.dat");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			userList = (UserList) ois.readObject();
+			ois.close();
+		}
 		System.out.println("図書館へようこそ！");
 		while(flag_main) {
 			System.out.println("---");
@@ -44,6 +59,7 @@ public class CUIMainMenu {
 					break;
 				case 4://終了
 					System.out.println("終了します");
+
 					flag_main = false;
 					break;
 				default:
@@ -52,6 +68,11 @@ public class CUIMainMenu {
 			}
 
 		}
+		FileOutputStream fos = new FileOutputStream("./userList.dat");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(userList);
+		oos.flush();
+		oos.close();
 		sc.close();
 
 	}

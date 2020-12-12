@@ -32,7 +32,7 @@ public class CUIUserList {
 					for(int i=0; i < size; i++) {
 						System.out.println(i+1 + ". " + CUIMainMenu.userList.userList.get(i).getName());
 					}
-					System.out.println("削除したい利用者の番号を入力してください");
+					System.out.println("削除したい利用者の番号を入力してください");	
 					int number = CUIMainMenu.sc.nextInt();
 					int listNumber = number -1;
 					System.out.println(String.format("『%s』を削除しました",CUIMainMenu.userList.userList.get(listNumber).getName()));
