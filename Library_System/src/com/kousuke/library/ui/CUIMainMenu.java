@@ -22,6 +22,7 @@ public class CUIMainMenu {
 //	static User user = new User();
 	static int select;
 	static File file = new File("./userList.dat");
+
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 //		oos.writeObject(userList);
 //		oos.flush();
