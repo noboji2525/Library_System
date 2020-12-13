@@ -11,7 +11,8 @@ public class CUIUserList {
 			System.out.println(
 					"1. 利用者登録" + CUIMainMenu.LINE_SPACE
 					+ "2. 利用者削除" + CUIMainMenu.LINE_SPACE
-					+ "3. 戻る" + CUIMainMenu.LINE_SPACE
+					+ "3. 利用者確認" + CUIMainMenu.LINE_SPACE
+					+ "4. 戻る" + CUIMainMenu.LINE_SPACE
 					);
 			System.out.print("操作を選んでください [1,2,3,4] > ");
 			CUIMainMenu.select = CUIMainMenu.sc.nextInt();
@@ -32,14 +33,24 @@ public class CUIUserList {
 					for(int i=0; i < size; i++) {
 						System.out.println(i+1 + ". " + CUIMainMenu.userList.userList.get(i).getName());
 					}
-					System.out.println("削除したい利用者の番号を入力してください");	
+					System.out.println("削除したい利用者の番号を入力してください");
 					int number = CUIMainMenu.sc.nextInt();
 					int listNumber = number -1;
 					System.out.println(String.format("『%s』を削除しました",CUIMainMenu.userList.userList.get(listNumber).getName()));
 					CUIMainMenu.userList.userDelet(listNumber);
 					System.out.println("---");
 					break;
-				case 3://戻る(メインメニューに遷移)
+				case 3://利用者確認
+					System.out.println("登録されている利用者を確認します");
+					size = CUIMainMenu.userList.userList.size();
+					for(int i=0; i < size; i++) {
+						System.out.print(String.format("番号【%1$03d】",
+								CUIMainMenu.userList.userList.get(i).getNumber()));
+						System.out.println(String.format("利用者名【%s】",
+								CUIMainMenu.userList.userList.get(i).getName()));
+					}
+					break;
+				case 4://戻る(メインメニューに遷移)
 					flag_userList = false;
 					break;
 				default:
