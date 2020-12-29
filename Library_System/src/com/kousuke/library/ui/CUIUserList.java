@@ -4,9 +4,9 @@ import com.kousuke.library.user.User;
 
 public class CUIUserList {
 
-	public static void selectUserList(boolean flag_userList) {
+	public static void selectUserList(int flag_userList) {
 
-		while(flag_userList) {
+		while(flag_userList == CUIMainMenu.MENU_TOP) {
 			System.out.println("利用者名簿メニュー" + CUIMainMenu.LINE_SPACE);
 			System.out.println(
 					"1. 利用者登録" + CUIMainMenu.LINE_SPACE
@@ -51,7 +51,7 @@ public class CUIUserList {
 					}
 					break;
 				case 4://戻る(メインメニューに遷移)
-					flag_userList = false;
+					flag_userList = CUIMainMenu.MENU_TOP;
 					break;
 				default:
 					break;

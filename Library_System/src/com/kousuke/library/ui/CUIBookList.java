@@ -2,9 +2,9 @@ package com.kousuke.library.ui;
 
 public class CUIBookList {
 
-	public static void selectBookList(boolean flag_bookList) {
+	public static void selectBookList(int flag_bookList) {
 
-		while(flag_bookList) {
+		while(flag_bookList == 0) {
 			System.out.println("本棚メニュー" + CUIMainMenu.LINE_SPACE);
 			System.out.println(
 					"1. 本の登録" + CUIMainMenu.LINE_SPACE
@@ -61,7 +61,7 @@ public class CUIBookList {
 					;
 					break;
 				case 4://戻る(メインメニューに遷移)
-					flag_bookList = false;
+					flag_bookList = 0;
 					break;
 				default:
 					break;
