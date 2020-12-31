@@ -28,6 +28,8 @@ public class CUIMainMenu {
 //		oos.writeObject(userList);
 //		oos.flush();
 		//oos.close();
+		CUIUserList CUIUser_List = new CUIUserList();
+		CUIBookList CUIBook_List = new CUIBookList();
 		if(file.exists()) {
 			FileInputStream fis = new FileInputStream("./userList.dat");
 			ObjectInputStream ois = new ObjectInputStream(fis);
@@ -35,7 +37,8 @@ public class CUIMainMenu {
 			ois.close();
 		}
 		System.out.println("図書館へようこそ！");
-		while(STATE_ON == -1) {
+		STATE_ON  = MENU_TOP;
+		while(STATE_ON == 0) {
 			System.out.println("---");
 			System.out.println("メインメニュー");
 			System.out.println();
@@ -52,11 +55,11 @@ public class CUIMainMenu {
 			switch(select) {
 				case 1://利用者名簿メニューに遷移
 					STATE_ON = MENU_USERLIST;
-					CUIUserList.selectUserList(STATE_ON);
+					CUIUser_List.selectUserList(STATE_ON);
 					break;
 				case 2://本棚
 					STATE_ON = MENU_BOOKLIST;
-					CUIBookList.selectBookList(STATE_ON);
+					CUIBook_List.selectBookList(STATE_ON);
 					break;
 				case 3://貸出し
 					System.out.println("未実装");
