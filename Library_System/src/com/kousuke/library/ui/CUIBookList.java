@@ -61,6 +61,7 @@ public class CUIBookList {
 					break;
 				case 3://本の確認
 					System.out.println("登録済みの本を表示します");
+
 					break;
 				case 4://戻る(メインメニューに遷移)
 					CUIMainMenu.STATE_ON = CUIMainMenu.MENU_TOP;
