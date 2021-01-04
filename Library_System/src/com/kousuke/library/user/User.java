@@ -2,8 +2,6 @@ package com.kousuke.library.user;
 
 import java.io.Serializable;
 
-import com.kousuke.library.ui.CUIMainMenu;
-
 public class User implements Human, Serializable{
 //	public final int count=1;
 	private int number=0;
@@ -13,9 +11,9 @@ public class User implements Human, Serializable{
 	public User() {
 
 	}
-	public User(String name) {
+	public User(String name, UserList userList) {
 		this.name = name;
-		this.number = CUIMainMenu.userList.getCounter();
+		this.number = userList.getCounter();
 	}
 
 
