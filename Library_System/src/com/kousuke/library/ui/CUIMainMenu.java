@@ -9,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 import com.kousuke.library.book.BookList;
+import com.kousuke.library.user.User;
 import com.kousuke.library.user.UserList;
 
 public class CUIMainMenu {
@@ -24,19 +25,34 @@ public class CUIMainMenu {
 //		oos.flush();
 		//oos.close();
 		int select;//sc格納
+		User user = new User();
 		UserList userList = new UserList();
 		BookList bookList = new BookList();
 		CUIUserList CUIUser_List = new CUIUserList();
 		CUIBookList CUIBook_List = new CUIBookList();
 		CUIRental CUI_Rental = new CUIRental();
-		File file = new File("./userList.dat");
+		File userFile = new File("./user.dat");
+		File userListFile = new File("./userList.dat");
+		File bookFile = new File("./bookList.dat");
 		Scanner sc = new Scanner(System.in);
+		if(userFile.exists()) {
+			FileInputStream fis_u = new FileInputStream("./user.dat");
+			ObjectInputStream ois_u = new ObjectInputStream(fis_u);
+			user = (User) ois_u.readObject();
+			ois_u.close();
+		}
 
-		if(file.exists()) {
-			FileInputStream fis = new FileInputStream("./userList.dat");
-			ObjectInputStream ois = new ObjectInputStream(fis);
-			userList = (UserList) ois.readObject();
-			ois.close();
+		if(userListFile.exists()) {
+			FileInputStream fis_ul = new FileInputStream("./userList.dat");
+			ObjectInputStream ois_ul = new ObjectInputStream(fis_ul);
+			userList = (UserList) ois_ul.readObject();
+			ois_ul.close();
+		}
+		if(bookFile.exists()) {
+			FileInputStream fis_b = new FileInputStream("./bookList.dat");
+			ObjectInputStream ois_b = new ObjectInputStream(fis_b);
+			bookList = (BookList) ois_b.readObject();
+			ois_b.close();
 		}
 		System.out.println("図書館へようこそ！");
 		STATE_ON  = MENU_TOP;
@@ -77,11 +93,27 @@ public class CUIMainMenu {
 			}
 
 		}
-		FileOutputStream fos = new FileOutputStream("./userList.dat");
-		ObjectOutputStream oos = new ObjectOutputStream(fos);
-		oos.writeObject(userList);
-		oos.flush();
-		oos.close();
+		FileOutputStream fos_u = new FileOutputStream("./user.dat");
+		ObjectOutputStream oos_u = new ObjectOutputStream(fos_u);
+
+		FileOutputStream fos_ul = new FileOutputStream("./userList.dat");
+		ObjectOutputStream oos_ul = new ObjectOutputStream(fos_ul);
+
+		FileOutputStream fos_b = new FileOutputStream("./bookList.dat");
+		ObjectOutputStream oos_b = new ObjectOutputStream(fos_b);
+
+		oos_u.writeObject(user);
+		oos_u.flush();
+
+		oos_ul.writeObject(userList);
+		oos_ul.flush();
+
+		oos_b.writeObject(bookList);
+		oos_b.flush();
+
+		oos_u.close();
+		oos_ul.close();
+		oos_b.close();
 		sc.close();
 
 	}

@@ -1,8 +1,9 @@
 package com.kousuke.library.book;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class BookList {
+public class BookList implements Serializable{
 	Magazine magazine = new Magazine();
 	Paperback paperback = new Paperback();
 	SpecialBook specialBook = new SpecialBook();
@@ -46,6 +47,7 @@ public class BookList {
 		for(int i=0; i < bookList_name.size(); i++) {
 			System.out.println(i+1 + ". " + bookList_name.get(i));
 		}
+//		System.out.println("本のデバッグ：" + bookList_all);
 	}
 
 
